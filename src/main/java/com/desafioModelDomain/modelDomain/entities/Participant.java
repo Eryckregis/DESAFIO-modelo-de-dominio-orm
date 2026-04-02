@@ -1,7 +1,14 @@
 package com.desafioModelDomain.modelDomain.entities;
 
+import jakarta.persistence.*;
+import java.util.Objects;
+
+@Entity
+@Table(name = "tb_participant")
 public class Participant {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String email;
@@ -40,5 +47,16 @@ public class Participant {
         this.email = email;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Participant that = (Participant) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 }
 
