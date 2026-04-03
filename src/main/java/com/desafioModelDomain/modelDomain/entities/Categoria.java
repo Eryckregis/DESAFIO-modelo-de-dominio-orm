@@ -36,12 +36,16 @@ public class Categoria {
         this.id = id;
     }
 
-    public String getDescription() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDescription(String descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Set<Atividade> getAtividades() {
+        return atividades;
     }
 
     @Override

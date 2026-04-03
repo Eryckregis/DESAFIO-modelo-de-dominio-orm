@@ -41,20 +41,28 @@ public class Bloco {
         this.id = id;
     }
 
-    public Instant getStart() {
+    public Instant getInicio() {
         return inicio;
     }
 
-    public void setStart(Instant inicio) {
+    public void setInicio(Instant inicio) {
         this.inicio = inicio;
     }
 
-    public Instant getEnd() {
+    public Instant getFim() {
         return fim;
     }
 
-    public void setEnd(Instant fim) {
+    public void setFim(Instant fim) {
         this.fim = fim;
+    }
+
+    public Atividade getAtividade() {
+        return atividade;
+    }
+
+    public void setAtividade(Atividade atividade) {
+        this.atividade = atividade;
     }
 
     @Override

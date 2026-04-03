@@ -54,28 +54,43 @@ public class Atividade {
         this.id = id;
     }
 
-    public String getName() {
+    public String getNome() {
         return nome;
     }
-
-    public void setName(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public String getDescription() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDescription(String descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
-    public Double getPrice() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPrice(Double preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Set<Participante> getParticipantes() {
+        return participantes;
+    }
+
+    public Set<Bloco> getBlocos() {
+        return blocos;
     }
 
     @Override

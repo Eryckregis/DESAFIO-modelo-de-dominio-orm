@@ -38,11 +38,11 @@ public class Participante {
         this.id = id;
     }
 
-    public String getName() {
+    public String getNome() {
         return nome;
     }
 
-    public void setName(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -52,6 +52,10 @@ public class Participante {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<Atividade> getAtividades() {
+        return atividades;
     }
 
     @Override
