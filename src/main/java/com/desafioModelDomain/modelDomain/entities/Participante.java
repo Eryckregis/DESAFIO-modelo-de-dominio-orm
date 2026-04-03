@@ -1,25 +1,32 @@
 package com.desafioModelDomain.modelDomain.entities;
 
 import jakarta.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
-@Table(name = "tb_participant")
-public class Participant {
+@Table(name = "tb_participante")
+public class Participante {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
+    private String nome;
+
+    @Column(unique = true)
     private String email;
 
-    public Participant() {
+    @ManyToMany(mappedBy = "participantes")
+    private Set<Atividade> atividades = new HashSet<>();
+
+    public Participante() {
 
     }
 
-    public Participant(Integer id, String name, String email) {
+    public Participante(Integer id, String nome, String email) {
         this.id = id;
-        this.name = name;
+        this.nome = nome;
         this.email = email;
     }
 
@@ -32,11 +39,11 @@ public class Participant {
     }
 
     public String getName() {
-        return name;
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String nome) {
+        this.nome = nome;
     }
 
     public String getEmail() {
@@ -50,13 +57,13 @@ public class Participant {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Participant that = (Participant) o;
+        Participante that = (Participante) o;
         return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return 0;
+        return Objects.hashCode(id);
     }
 }
 
